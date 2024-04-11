@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { getPosts } from '@/utils/data.js'
 
 export default function Home() {
+
+  getPosts();
+  
   return (
     <div className="flex justify-between items-center gap-x-6">
       <div className="text-white w-[50%] px-4">
@@ -13,7 +17,7 @@ export default function Home() {
           We are such a cool company even i dont know what we do lol lmao rofl
         </p>
         <div className="flex gap-x-4">
-          <button className="py-2 px-4 bg-blue-500 text-white rounded-md">
+          <button className="py-2 px-4 bg-blue-500 hover:bg-blue-700  duration-75 text-white rounded-md">
             Learn More
           </button>
           <button className="py-2 px-4 bg-white text-black rounded-md">
@@ -21,7 +25,7 @@ export default function Home() {
           </button>
         </div>
         <div className="w-[100%] h-[75px] relative">
-         <Image src="/brands.png" className="mt-4" layout="fill" alt="brands" />
+         <Image src="/brands.png" className="mt-4" fill alt="brands" />
         </div>
       </div>
       <div className="w-[50%] max-h-[450]">
