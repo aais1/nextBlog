@@ -3,7 +3,12 @@ import { getPosts } from '@/utils/data.js'
 
 export default function Home() {
 
-  getPosts();
+  const get=async()=>{
+    const posts = await getPosts()
+    console.log(posts)
+  }
+
+  get();
   
   return (
     <div className="flex justify-between items-center gap-x-6">

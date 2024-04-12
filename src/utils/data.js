@@ -4,8 +4,8 @@ import { connectToDb } from './connectToDb';
 export const getPosts=async()=>{
     connectToDb();
     try{
-        const posts=await Post.find();
-        console.log(posts)
+        const posts = await Post.find()
+        return posts;
     }catch(err){
         console.log(err)
         throw new Error('Error in fetching posts')
