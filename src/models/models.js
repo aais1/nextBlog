@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+//user scheme
 const userSchema=mongoose.Schema({
     username:{
         type:String,
@@ -30,6 +31,7 @@ const userSchema=mongoose.Schema({
     },{timestamps:true}
 )
 
+//post scheme
 const postScheme=mongoose.Schema({
     title:{
         type:String,
@@ -41,16 +43,9 @@ const postScheme=mongoose.Schema({
     },
     img:{
         type:String
-    },
-    slug:{
-        type:String,
-        required:true,
-    },
-    userId:{
-        type:String,
-        required:false
     }
 },{timestamps:true})
 
+//models
 export const User= mongoose.models.User || mongoose.model('User',userSchema);
 export const Post= mongoose.models.Post || mongoose.model('Post',postScheme);

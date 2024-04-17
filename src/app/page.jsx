@@ -1,15 +1,8 @@
 import Image from "next/image";
-import { getPosts } from '@/utils/data.js'
+
 
 export default function Home() {
 
-  const get=async()=>{
-    const posts = await getPosts()
-    console.log(posts)
-  }
-
-  get();
-  
   return (
     <div className="flex justify-between items-center gap-x-6">
       <div className="text-white w-[50%] px-4">

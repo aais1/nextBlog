@@ -4,7 +4,7 @@ import { connectToDb } from './connectToDb';
 export const getPosts=async()=>{
     connectToDb();
     try{
-        const posts = await Post.find()
+        const posts = await Post.find();
         return posts;
     }catch(err){
         console.log(err)
@@ -12,21 +12,11 @@ export const getPosts=async()=>{
     }
 }
 
-const getPostById=async()=>{
+export const getPostById=async(slug)=>{
     connectToDb();
     try{
-
-    }catch(err){
-        console.log(err)
-        throw new Error('Error in fetching posts')
-    }
-}
-
-const createPost=async()=>{
-    connectToDb();
-    try{
-
-
+        const post = await Post.findById(slug);
+        return post;
     }catch(err){
         console.log(err)
         throw new Error('Error in fetching posts')
