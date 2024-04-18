@@ -3,15 +3,19 @@ import Author from '@/components/author/Author'
 import { Suspense } from 'react'
 import { getPostById } from '@/utils/data.js'
 
+
 const page = async ({params}) => {
 
-  const {title,description,createdAt} = await getPostById(params.slug)
+
+  const {title,description,createdAt} = await getPostById(params.slug);
+
+
 
   return (
     <div className='flex flex-col gap-6 md:flex-row px-4 text-white md:justify-between'>
-      <div className='w-[250px] h-[333px]'>
+      <div className='min-w-[95%] md:min-w-[30%] min-h-[420px] md:h-[500px] relative'>
         <Image src="https://images.pexels.com/photos/20888059/pexels-photo-20888059/free-photo-of-view-of-a-canal-and-basilica-in-venice.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        width={250} height={333} alt='image' />
+        layout='fill' alt='image' />
       </div>
       <div className='min-w-[70%]'>
         <h1 className='text-2xl font-bold '>{title}</h1>

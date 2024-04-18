@@ -1,7 +1,6 @@
 import { connectToDb } from "./connectToDb";
 import { Post } from '@/models/models.js'
 
-
 export const createPost=async(formData)=>{
     "use server"
 
