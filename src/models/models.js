@@ -5,12 +5,12 @@ const userSchema=mongoose.Schema({
     username:{
         type:String,
         required:true,
-        unique:true
+      
     },
     password:{
         type:String,
         required:true,
-        min:6
+        min:[6,'Password must be atleast 6 characters']
     },
     img:{
         type:String
@@ -21,8 +21,7 @@ const userSchema=mongoose.Schema({
         unique:true
     },
     userId:{
-        type:String,
-        required:true
+        type:String
     },
     isAdmin:{
         type:Boolean,
