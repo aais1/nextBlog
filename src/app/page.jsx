@@ -22,7 +22,7 @@ export default function Home() {
             Contact
           </button>
         </div>
-        <div className="w-[100%] h-[75px] relative">
+        <div className="md:w-[80%] w-[100%] h-[45px] relative">
          <Image src="/brands.png" className="mt-4" fill alt="brands" />
         </div>
       </div>
