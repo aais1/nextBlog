@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function Home() {
 
   return (
-    <div className="flex justify-between items-center gap-x-6">
-      <div className="text-white w-[50%] px-4">
+    <div className="flex md:flex-row flex-col justify-between items-center gap-x-6 gap-y-8">
+      <div className="text-white w-[95%] md:w-[50%] px-4">
         <div className=" text-6xl font-extrabold space-y-4 mb-4">
           <h1>Creative</h1>
           <h1>Thoughts</h1>
@@ -22,7 +22,7 @@ export default function Home() {
             Contact
           </button>
         </div>
-        <div className="md:w-[80%] w-[100%] h-[45px] relative">
+        <div className="md:w-[95%] w-[100%] h-[45px] relative">
          <Image src="/brands.png" className="mt-4" fill alt="brands" />
         </div>
       </div>
