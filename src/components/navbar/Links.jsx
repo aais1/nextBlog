@@ -56,7 +56,7 @@ const Links = () => {
             setShowMenu(!showMenu)
           }}
           className="px-4 py-2 self-end cursor-pointer">
-            <IoClose className="text-4xl " />
+            <IoClose className="text-6xl " />
           </div>
           <div className="flex items-center flex-col mt-[0.5vh]">
           {links.map((link) => (
