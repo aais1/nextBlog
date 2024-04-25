@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { links } from "@/constants/links";
@@ -11,6 +11,26 @@ const Links = () => {
   const isAdmin = true; // You can replace this with your logic to determine if user is admin
   const isLoggedIn = true; // You can replace this with your logic to determine if user is logged in
   const [showMenu, setShowMenu] = useState(false);
+
+  const hideMenu = () => {
+    if (showMenu) {
+      setShowMenu(false);
+    }
+  };
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      hideMenu();
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+  
+    // Cleanup function
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showMenu]);
+  
 
   
   return (
@@ -63,6 +83,10 @@ const Links = () => {
           <Link
             key={link.value}
             href={link.path}
+            onClick={()=>{
+              setShowMenu(!showMenu)
+            }}
+            
             className={`text-md px-4 py-2 w-screen border-collapse  hover:underline font-semibold  border-t border-b ${
               pathname === link.path ? "" : ""
             }`}
@@ -73,7 +97,8 @@ const Links = () => {
         ))}
         </div>
         </div>
-        <div className={`${showMenu ? `block opacity-100 ` : `hidden opacity-0`} md:hidden duration-1000 z-20 top-0 left-0 absolute backdrop-blur-sm min-h-screen w-screen`}>
+        <div className={`${showMenu ? `block opacity-100 ` : `hidden opacity-0`} md:hidden duration-1000 z-20 bottom-0 left-0 backdrop-blur-sm min-h-screen w-screen fixed`}
+        onClick={()=>setShowMenu(!showMenu)}>
             
           </div>
       
